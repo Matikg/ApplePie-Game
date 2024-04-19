@@ -12,6 +12,7 @@ struct ApplePieApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(GameModel())
         }
     }
 }

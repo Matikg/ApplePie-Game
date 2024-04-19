@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var model: GameModel
+    
     var body: some View {
         VStack {
             TreeView()
@@ -16,10 +19,13 @@ struct ContentView: View {
                 .font(.largeTitle)
         }
         .padding()
-        
+        .onAppear {
+            model.newRound()
+            print(model.currentGame.word)
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(GameModel())
 }

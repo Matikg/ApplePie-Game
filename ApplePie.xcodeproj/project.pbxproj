@@ -13,6 +13,8 @@
 		E8F996692BD1BA6900D793A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F996682BD1BA6900D793A3 /* Preview Assets.xcassets */; };
 		E8F996702BD1BE2800D793A3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9966F2BD1BE2800D793A3 /* Keyboard.swift */; };
 		E8F996722BD1C6CB00D793A3 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F996712BD1C6CB00D793A3 /* TreeView.swift */; };
+		E8F996742BD25A0B00D793A3 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F996732BD25A0B00D793A3 /* GameModel.swift */; };
+		E8F996762BD25A8800D793A3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F996752BD25A8800D793A3 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		E8F996682BD1BA6900D793A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8F9966F2BD1BE2800D793A3 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		E8F996712BD1C6CB00D793A3 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		E8F996732BD25A0B00D793A3 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		E8F996752BD25A8800D793A3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				E8F996612BD1BA6400D793A3 /* ApplePieApp.swift */,
+				E8F996752BD25A8800D793A3 /* Game.swift */,
+				E8F996732BD25A0B00D793A3 /* GameModel.swift */,
 				E8F996632BD1BA6400D793A3 /* ContentView.swift */,
 				E8F996712BD1C6CB00D793A3 /* TreeView.swift */,
 				E8F9966F2BD1BE2800D793A3 /* Keyboard.swift */,
@@ -143,6 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F996742BD25A0B00D793A3 /* GameModel.swift in Sources */,
+				E8F996762BD25A8800D793A3 /* Game.swift in Sources */,
 				E8F996722BD1C6CB00D793A3 /* TreeView.swift in Sources */,
 				E8F996642BD1BA6400D793A3 /* ContentView.swift in Sources */,
 				E8F996702BD1BE2800D793A3 /* Keyboard.swift in Sources */,

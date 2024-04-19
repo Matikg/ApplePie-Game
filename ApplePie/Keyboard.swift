@@ -27,7 +27,7 @@ struct Keyboard: View {
 }
 
 struct RowView: View {
-    
+    @EnvironmentObject var model: GameModel
     let row: [String]
     
     var body: some View {
@@ -35,6 +35,7 @@ struct RowView: View {
             ForEach(row, id: \.self) { letter in
                 Button(action: {
                     // Action here
+                    model.currentGame.playerGuessed(letter: letter.lowercased())
                 }, label: {
                     Text(letter)
                 })
