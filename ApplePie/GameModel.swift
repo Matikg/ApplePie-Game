@@ -8,6 +8,7 @@
 import Foundation
 
 class GameModel: ObservableObject {
+    var keyboard = Keyboard()
     var currentGame: Game!
     var listOfWords = ["buccaneer", "swift", "glorious"]
     var disabledButtons = [String]()
@@ -26,10 +27,16 @@ class GameModel: ObservableObject {
     @Published var correctWordLabel = "Label"
     
     func newRound() {
-        let newWord = listOfWords.removeFirst()
-        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [String]())
-        updateUI()
-        disabledButtons.removeAll()
+        if !listOfWords.isEmpty {
+            let newWord = listOfWords.removeFirst()
+            currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [String]())
+            updateUI()
+            disabledButtons.removeAll()
+            
+        } else {
+            disableAllButtons()
+        }
+        
     }
     
     func updateUI() {
@@ -42,6 +49,10 @@ class GameModel: ObservableObject {
     
     func disableButton(buttonLabel: String) {
         disabledButtons.append(buttonLabel)
+    }
+    
+    func disableAllButtons() {
+        disabledButtons = keyboard.topRow + keyboard.middleRow + keyboard.bottomRow
     }
     
     func updateGameState() {
