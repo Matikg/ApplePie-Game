@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var correctWordLabel = "Label"
     var body: some View {
         VStack {
-            TreeView()
+            TreeView(shouldAnimate1: $model.shouldAnimate1)
             Keyboard()
             Text(model.correctWordLabel)
                 .font(.largeTitle)

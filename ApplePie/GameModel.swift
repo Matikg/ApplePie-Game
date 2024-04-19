@@ -25,8 +25,10 @@ class GameModel: ObservableObject {
     }
     
     @Published var correctWordLabel = "Label"
+    @Published var shouldAnimate1 = false
     
     func newRound() {
+        shouldAnimate1 = false
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
             currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [String]())
@@ -36,15 +38,17 @@ class GameModel: ObservableObject {
         } else {
             disableAllButtons()
         }
-        
     }
     
     func updateUI() {
         var letters = [String]()
         for letter in currentGame.formattedWord {
             letters.append(String(letter))
-         }
+        }
         correctWordLabel = letters.joined(separator: " ")
+        if currentGame.incorrectMovesRemaining == 6 {
+            shouldAnimate1 = true
+        }
     }
     
     func disableButton(buttonLabel: String) {
@@ -65,5 +69,4 @@ class GameModel: ObservableObject {
             updateUI()
         }
     }
-
 }

@@ -11,7 +11,7 @@ struct TreeView: View {
     
     @State private var treeImage = "Tree 0"
     @State private var appleImage = "Apple"
-    
+    @Binding var shouldAnimate1: Bool
     var body: some View {
         
         GeometryReader { geo in
@@ -26,6 +26,8 @@ struct TreeView: View {
                         .resizable()
                         .frame(width: 90, height: 90)
                         .offset(x: geo.size.width/10 - 200, y: geo.size.height/4 - 300)
+                        .offset(y: shouldAnimate1 ? 400 : 0)
+                        .animation(.easeIn(duration: 0.75), value: shouldAnimate1)
                     
                     Image(appleImage)
                         .resizable()
@@ -56,7 +58,6 @@ struct TreeView: View {
                         .resizable()
                         .frame(width: 90, height: 90)
                         .offset(x: geo.size.width/10 - 110, y: geo.size.height/10 - 150)
-                    
                 }
                 .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
             }
@@ -68,5 +69,5 @@ struct TreeView: View {
 
 
 #Preview {
-    TreeView()
+    TreeView(shouldAnimate1: .constant(false))
 }
