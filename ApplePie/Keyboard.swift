@@ -22,9 +22,9 @@ struct Keyboard: View {
     }
 }
 
-#Preview {
-    Keyboard()
-}
+//#Preview {
+//    Keyboard()
+//}
 
 struct RowView: View {
     @EnvironmentObject var model: GameModel
@@ -36,6 +36,7 @@ struct RowView: View {
                 Button(action: {
                     // Action here
                     model.currentGame.playerGuessed(letter: letter.lowercased())
+                    model.updateUI()
                 }, label: {
                     Text(letter)
                 })

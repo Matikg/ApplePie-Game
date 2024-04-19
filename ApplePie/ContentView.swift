@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var model: GameModel
-    
+    @State private var correctWordLabel = "Label"
     var body: some View {
         VStack {
             TreeView()
             Keyboard()
-            Text("Label")
+            Text(model.correctWordLabel)
                 .font(.largeTitle)
         }
         .padding()
