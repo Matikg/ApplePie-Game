@@ -10,6 +10,7 @@ import Foundation
 class GameModel: ObservableObject {
     var currentGame: Game!
     var listOfWords = ["buccaneer", "swift", "glorious"]
+    var disabledButtons = [String]()
     let incorrectMovesAllowed = 7
     var totalWins = 0
     var totalLosses = 0
@@ -17,7 +18,6 @@ class GameModel: ObservableObject {
     @Published var correctWordLabel = "Label"
     
     func newRound() {
-        
         let newWord = listOfWords.removeFirst()
         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [String]())
         updateUI()
@@ -29,8 +29,10 @@ class GameModel: ObservableObject {
             letters.append(String(letter))
          }
         correctWordLabel = letters.joined(separator: " ")
-        
     }
     
-    
+    func disableButton(buttonLabel: String) {
+        disabledButtons.append(buttonLabel)
+    }
+
 }

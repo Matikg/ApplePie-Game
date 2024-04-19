@@ -36,6 +36,7 @@ struct RowView: View {
                 Button(action: {
                     // Action here
                     model.currentGame.playerGuessed(letter: letter.lowercased())
+                    model.disableButton(buttonLabel: letter)
                     model.updateUI()
                 }, label: {
                     Text(letter)
@@ -44,6 +45,7 @@ struct RowView: View {
                 .buttonStyle(.bordered)
                 .tint(.purple)
                 .padding(1)
+                .disabled(model.disabledButtons.contains(letter))
             }
         }
     }
