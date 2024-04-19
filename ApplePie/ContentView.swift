@@ -21,7 +21,6 @@ struct ContentView: View {
         .padding()
         .onAppear {
             model.newRound()
-            //print(model.currentGame.word)
         }
     }
 }
